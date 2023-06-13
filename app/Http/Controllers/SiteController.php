@@ -10,4 +10,9 @@ class SiteController extends Controller
     {
         return view('home');
     }
+
+    public function cardType($type = 'simple')
+    {
+        return view('form', ['type' => $type]);
+    }
 }

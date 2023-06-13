@@ -16,5 +16,5 @@ use App\Http\Controllers\FormController;
 */
 
 Route::get('/', [SiteController::class, 'index'])->name('home');
-
+Route::get('/card/{type?}', [SiteController::class, 'cardType']);
 Route::post('/create', [FormController::class, 'create'])->name('create');

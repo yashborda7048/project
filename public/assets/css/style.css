@@ -5,63 +5,62 @@ body {
     background: #d1d1d1;
 }
 
-#wrapper {
-    width: 1000px;
-    margin: 50px auto 0;
-    background-color: #fff;
+#cards {
+    gap:30px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-#header {
-    text-align: center;
-    background-color: #1abc9c;
-    padding: 10px;
+@media (max-width: 825.98px) {
+    #cards {
+        gap:30px;
+        grid-template-columns: repeat(1,1fr)
+    }
 }
 
-#header h1 {
-    color: #fff;
-    font-size: 40px;
-    font-style: italic;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0;
+.card-container {
+    border-radius: 16px;
+    max-height: 436px;
+    overflow: hidden;
+    position: relative;
+    width: max-content;
+    margin: auto;
 }
 
-#menu {
-    background-color: #333;
-}
-#menu ul {
-    font-size: 0;
-    padding: 0 10px;
-    margin: 0;
-    list-style: none;
-}
-#menu ul li {
-    display: inline-block;
-}
-#menu ul li a {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 8px 10px;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
+.card-container .image {
+    cursor: pointer;
+    transform: scale(1.1);
     transition: all 0.3s ease;
 }
 
-#menu ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.card-container:hover .image {
+    transform: scale(1);
+}
+
+.card-container .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 1;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
 }
 
 #main-content {
     padding: 25px;
     min-height: 400px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
 }
 #main-content h2 {
     margin: 0 0 10px;
     text-transform: capitalize;
 }
-
+/* 
 #main-content table {
     width: 100%;
     background-color: #555;
@@ -104,8 +103,7 @@ body {
     width: auto;
 }
 
-#main-content .post-form,
-.card-container {
+#main-content .post-form {
     width: 50%;
     min-width: 500px;
     padding: 25px;
@@ -182,13 +180,6 @@ body {
     background-color: #333;
 }
 
-.text-center {
-    text-align: center;
-}
-.text-danger {
-    color: #e74c3c;
-}
-
 .form-group .error {
     width: 68%;
     margin-left: auto;
@@ -200,98 +191,4 @@ body {
     color: green;
     text-align: center;
     margin-bottom: 30px;
-}
-
-/* Modal  */
-
-/* Float cancel and delete buttons and add an equal width */
-.cancelbtn,
-.deletebtn {
-    float: left;
-    width: 50%;
-    padding: 14px 0px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.9;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-/* Add a color to the cancel button */
-.cancelbtn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Add a color to the delete button */
-.deletebtn {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Add padding and center-align text to the container */
-.container {
-    padding: 16px;
-    text-align: center;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #474e5d;
-    padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
-}
-
-/* Style the horizontal ruler */
-hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
-}
-
-/* The Modal Close Button (x) */
-.close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-    color: #f44336;
-    cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Change styles for cancel button and delete button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn,
-    .deletebtn {
-        width: 100%;
-    }
-}
+} */

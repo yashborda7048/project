@@ -11,7 +11,6 @@ class FormController extends Controller
     {
         // validatation 
         $request->validate([
-            'card_type' => 'required',
             'front_img' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
             'back_img' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
             'song_name' => 'required',
